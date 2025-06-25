@@ -7,19 +7,32 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		F64BCEBA2E0B966500753825 /* BBangBBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBangBBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6422C712E0BC6C7008D6A5F /* BBangBBang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BBangBBang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F6422C832E0BC6C7008D6A5F /* Exceptions for "BBangBBang" folder in "BBangBBang" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F6422C702E0BC6C7008D6A5F /* BBangBBang */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F64BCEBC2E0B966500753825 /* BBangBBang */ = {
+		F6422C732E0BC6C7008D6A5F /* BBangBBang */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F6422C832E0BC6C7008D6A5F /* Exceptions for "BBangBBang" folder in "BBangBBang" target */,
+			);
 			path = BBangBBang;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F64BCEB72E0B966500753825 /* Frameworks */ = {
+		F6422C6E2E0BC6C7008D6A5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F64BCEB12E0B966500753825 = {
+		F6422C682E0BC6C7008D6A5F = {
 			isa = PBXGroup;
 			children = (
-				F64BCEBC2E0B966500753825 /* BBangBBang */,
-				F64BCEBB2E0B966500753825 /* Products */,
+				F6422C732E0BC6C7008D6A5F /* BBangBBang */,
+				F6422C722E0BC6C7008D6A5F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F64BCEBB2E0B966500753825 /* Products */ = {
+		F6422C722E0BC6C7008D6A5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F64BCEBA2E0B966500753825 /* BBangBBang.app */,
+				F6422C712E0BC6C7008D6A5F /* BBangBBang.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F64BCEB92E0B966500753825 /* BBangBBang */ = {
+		F6422C702E0BC6C7008D6A5F /* BBangBBang */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F64BCEC52E0B966600753825 /* Build configuration list for PBXNativeTarget "BBangBBang" */;
+			buildConfigurationList = F6422C842E0BC6C7008D6A5F /* Build configuration list for PBXNativeTarget "BBangBBang" */;
 			buildPhases = (
-				F64BCEB62E0B966500753825 /* Sources */,
-				F64BCEB72E0B966500753825 /* Frameworks */,
-				F64BCEB82E0B966500753825 /* Resources */,
+				F6422C6D2E0BC6C7008D6A5F /* Sources */,
+				F6422C6E2E0BC6C7008D6A5F /* Frameworks */,
+				F6422C6F2E0BC6C7008D6A5F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F64BCEBC2E0B966500753825 /* BBangBBang */,
+				F6422C732E0BC6C7008D6A5F /* BBangBBang */,
 			);
 			name = BBangBBang;
 			packageProductDependencies = (
 			);
 			productName = BBangBBang;
-			productReference = F64BCEBA2E0B966500753825 /* BBangBBang.app */;
+			productReference = F6422C712E0BC6C7008D6A5F /* BBangBBang.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F64BCEB22E0B966500753825 /* Project object */ = {
+		F6422C692E0BC6C7008D6A5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					F64BCEB92E0B966500753825 = {
+					F6422C702E0BC6C7008D6A5F = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = F64BCEB52E0B966500753825 /* Build configuration list for PBXProject "BBangBBang" */;
+			buildConfigurationList = F6422C6C2E0BC6C7008D6A5F /* Build configuration list for PBXProject "BBangBBang" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = F64BCEB12E0B966500753825;
+			mainGroup = F6422C682E0BC6C7008D6A5F;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = F64BCEBB2E0B966500753825 /* Products */;
+			productRefGroup = F6422C722E0BC6C7008D6A5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F64BCEB92E0B966500753825 /* BBangBBang */,
+				F6422C702E0BC6C7008D6A5F /* BBangBBang */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F64BCEB82E0B966500753825 /* Resources */ = {
+		F6422C6F2E0BC6C7008D6A5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F64BCEB62E0B966500753825 /* Sources */ = {
+		F6422C6D2E0BC6C7008D6A5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +138,63 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F64BCEC32E0B966600753825 /* Debug */ = {
+		F6422C852E0BC6C7008D6A5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W9KP2B6Y9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BBangBBang/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Don.BBangBBang;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F6422C862E0BC6C7008D6A5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2W9KP2B6Y9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BBangBBang/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Don.BBangBBang;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F6422C872E0BC6C7008D6A5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -189,7 +258,7 @@
 			};
 			name = Debug;
 		};
-		F64BCEC42E0B966600753825 /* Release */ = {
+		F6422C882E0BC6C7008D6A5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,84 +315,28 @@
 			};
 			name = Release;
 		};
-		F64BCEC62E0B966600753825 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W9KP2B6Y9;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Don.BBangBBang;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F64BCEC72E0B966600753825 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2W9KP2B6Y9;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Don.BBangBBang;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F64BCEB52E0B966500753825 /* Build configuration list for PBXProject "BBangBBang" */ = {
+		F6422C6C2E0BC6C7008D6A5F /* Build configuration list for PBXProject "BBangBBang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F64BCEC32E0B966600753825 /* Debug */,
-				F64BCEC42E0B966600753825 /* Release */,
+				F6422C872E0BC6C7008D6A5F /* Debug */,
+				F6422C882E0BC6C7008D6A5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F64BCEC52E0B966600753825 /* Build configuration list for PBXNativeTarget "BBangBBang" */ = {
+		F6422C842E0BC6C7008D6A5F /* Build configuration list for PBXNativeTarget "BBangBBang" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F64BCEC62E0B966600753825 /* Debug */,
-				F64BCEC72E0B966600753825 /* Release */,
+				F6422C852E0BC6C7008D6A5F /* Debug */,
+				F6422C862E0BC6C7008D6A5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F64BCEB22E0B966500753825 /* Project object */;
+	rootObject = F6422C692E0BC6C7008D6A5F /* Project object */;
 }
