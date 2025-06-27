@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         setupHeader()
         setupTabMenu()
         setupMenuSection()
+        
     }
     
     private func setupHeader() {
@@ -34,6 +35,10 @@ class ViewController: UIViewController {
     }
     
     private func setupTabMenu() {
+        
+        tabMenuView.allButtons().forEach {
+            $0.addTarget(self, action: #selector(tabTapped(_:)), for: .touchUpInside)
+        }
         
         view.addSubview(tabMenuView)
         
@@ -53,6 +58,10 @@ class ViewController: UIViewController {
             $0.height.equalTo(400)
         }
         
+    }
+    
+    @objc private func tabTapped(_ sender: UIButton) {
+        menuView.updateCategory(index: sender.tag)
     }
     
 }
