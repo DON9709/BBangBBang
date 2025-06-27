@@ -69,6 +69,7 @@ class ProductView: UIView {
 class MenuCell: UICollectionViewCell {
     
     private var productViews: [ProductView] = []
+    private var currentItems: [MenuItem] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -106,13 +107,27 @@ class MenuCell: UICollectionViewCell {
     func configure(with items: [MenuItem]) {
         for (index, item) in items.enumerated() {
             if index < productViews.count {
-                productViews[index].configure(
+                let productView = productViews[index]
+                productView.configure(
                     image: UIImage(named: item.imageName),
                     title: item.title,
                     price: item.price
                 )
+                productView.isUserInteractionEnabled = true
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(productTapped(_:)))
+                productView.addGestureRecognizer(tapGesture)
+                productView.tag = index
             }
         }
+        self.currentItems = items
+    }
+    
+    @objc private func productTapped(_ sender: UITapGestureRecognizer) {
+        guard let view = sender.view else { return }
+        let index = view.tag
+        guard index < currentItems.count else { return }
+        let selectedItem = currentItems[index]
+        NotificationCenter.default.post(name: NSNotification.Name("SelectedBreadItem"), object: selectedItem)
     }
 }
 
@@ -137,7 +152,7 @@ class MenuView: UIView {
         return pc
     }()
     
-    private let breadItems = [
+    let breadItems = [
         MenuItem(imageName: "WhiteBread", title: "식빵", price: "2,000원"),
         MenuItem(imageName: "RedBeanBun", title: "단팥빵", price: "2,400원"),
         MenuItem(imageName: "Soboro", title: "소보로", price: "2,100원"),
@@ -148,7 +163,7 @@ class MenuView: UIView {
         MenuItem(imageName: "Muffin", title: "머핀", price: "1,500원")
     ]
 
-    private let drinkItems = [
+    let drinkItems = [
         MenuItem(imageName: "Americano", title: "아메리카노", price: "2,500원"),
         MenuItem(imageName: "VanillaLatte", title: "바닐라라떼", price: "3,200원"),
         MenuItem(imageName: "CaramelMacchiato", title: "카라멜마끼아또", price: "3,500원"),
@@ -159,7 +174,7 @@ class MenuView: UIView {
         MenuItem(imageName: "Matchalatte", title: "말차라떼", price: "3,500원")
     ]
 
-    private let dessertItems = [
+    let dessertItems = [
         MenuItem(imageName: "Macaroon", title: "마카롱", price: "3,000원"),
         MenuItem(imageName: "Tart", title: "타르트", price: "1,500원"),
         MenuItem(imageName: "ChocoCake", title: "초코케익", price: "4,000원"),
@@ -176,12 +191,15 @@ class MenuView: UIView {
         super.init(frame: frame)
         setupCollectionView()
         setupLayout()
+        updateCategory(index: 0)
+        
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupCollectionView()
         setupLayout()
+        updateCategory(index: 0)
     }
 
     private func setupCollectionView() {
