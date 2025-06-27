@@ -177,7 +177,7 @@ class MenuViewController: UIViewController {
                 MenuItem(imageName: "Croissant", title: "크루아상", price: "2,300원"),
                 MenuItem(imageName: "Ang-butter", title: "앙버터", price: "3,500원"),
                 MenuItem(imageName: "Croquette", title: "고로케", price: "2,800원"),
-                MenuItem(imageName: "GarlicBread", title: "마늘빵", price: "2,500원")
+                MenuItem(imageName: "Muffin", title: "머핀", price: "1,500원")
             ]
 
             let drinkItems = [
