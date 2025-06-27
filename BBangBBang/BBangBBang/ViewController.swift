@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     private let titleSectionView = TitleSectionView()
     private let tabMenuView = TabMenuView()
     private let menuView = MenuView()
+    private let cartView = CartViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class ViewController: UIViewController {
         setupHeader()
         setupTabMenu()
         setupMenuSection()
-        
+        setupCart()
     }
     
     private func setupHeader() {
@@ -58,6 +59,17 @@ class ViewController: UIViewController {
             $0.height.equalTo(400)
         }
         
+    }
+    
+    private func setupCart() {
+        
+        view.addSubview(cartView.view)
+        
+        cartView.view.snp.makeConstraints {
+            $0.top.equalTo(menuView.snp.bottom).offset(64)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.5)
+        }
     }
     
     @objc private func tabTapped(_ sender: UIButton) {
