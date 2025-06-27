@@ -48,7 +48,7 @@ final class TitleSectionView: UIView {
         stackView.alignment = .center
         return stackView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -128,6 +128,11 @@ final class TabMenuView: UIView {
     
     @objc private func categoryTapped(_ sender: UIButton) {
         selectCategory(index: sender.tag)
+        
+    }
+    
+    func allButtons() -> [UIButton] {
+        buttons
     }
 
     private func selectCategory(index: Int) {
