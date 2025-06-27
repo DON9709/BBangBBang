@@ -37,9 +37,11 @@ class ProductView: UIView {
         imageView.clipsToBounds = true
         
         titleLabel.font = .systemFont(ofSize: 14)
+        titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         
         priceLabel.font = .boldSystemFont(ofSize: 16)
+        priceLabel.textColor = .black
         priceLabel.textAlignment = .center
         
         let stack = UIStackView(arrangedSubviews: [imageView, titleLabel, priceLabel])
@@ -115,7 +117,7 @@ class MenuCell: UICollectionViewCell {
 }
 
 // MARK: - 메뉴 화면 전체 컨트롤러
-class MenuViewController: UIViewController {
+class MenuView: UIView {
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -137,10 +139,15 @@ class MenuViewController: UIViewController {
     
     var pagedItems: [[MenuItem]] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupDummyData()
+        setupCollectionView()
+        setupLayout()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupDummyData()
         setupCollectionView()
         setupLayout()
@@ -153,11 +160,12 @@ class MenuViewController: UIViewController {
     }
 
     private func setupLayout() {
-        view.addSubview(collectionView)
-        view.addSubview(pageControl)
+        collectionView.backgroundColor = .white
+        addSubview(collectionView)
+        addSubview(pageControl)
         
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(16)
+            $0.top.equalTo(safeAreaLayoutGuide).offset(16)
             $0.left.right.equalToSuperview()
             $0.height.equalTo(400)
         }
@@ -201,8 +209,8 @@ class MenuViewController: UIViewController {
                 MenuItem(imageName: "CarrotCake", title: "당근케익", price: "4,000원"),
                 MenuItem(imageName: "Cheesecake", title: "치즈케익", price: "4,200원")
             ]
-        pagedItems = stride(from: 0, to: BreadItems.count, by: 4).map {
-            Array(BreadItems[$0..<min($0+4, BreadItems.count)])
+        pagedItems = stride(from: 0, to: breadItems.count, by: 4).map {
+            Array(breadItems[$0..<min($0+4, breadItems.count)])
         }
 
         pageControl.numberOfPages = pagedItems.count
@@ -210,7 +218,7 @@ class MenuViewController: UIViewController {
 }
 
 // MARK: - CollectionView Delegate & DataSource
-extension MenuViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MenuView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pagedItems.count
