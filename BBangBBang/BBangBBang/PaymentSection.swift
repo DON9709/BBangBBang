@@ -60,14 +60,27 @@ class PaymentSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
     }
 
     private func setupViews() {
+        backgroundColor = .white
+
+        let topBorder = UIView()
+        topBorder.backgroundColor = .lightGray
+        addSubview(topBorder)
+        topBorder.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
+
         let hStack = UIStackView(arrangedSubviews: [totalLabel, priceLabel])
         hStack.axis = .horizontal
         hStack.distribution = .equalSpacing
@@ -83,9 +96,13 @@ class PaymentSectionView: UIView {
         buttonStack.snp.makeConstraints { make in
             make.top.equalTo(hStack.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(24)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().inset(24)
             make.height.equalTo(44)
         }
+    }
+    
+    @objc private func cancelTapped() {
+        NotificationCenter.default.post(name: NSNotification.Name("CancelAllItems"), object: nil)
     }
 }
 
