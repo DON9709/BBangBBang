@@ -34,13 +34,15 @@ class CartSection: UITableViewCell {
         priceLabel.font = UIFont.systemFont(ofSize: 16)
         priceLabel.textAlignment = .right
         
-        let buttonColor = UIColor(red: 254/255, green: 223/255, blue: 169/255, alpha: 1.0)
+        let buttonColor = UIColor(red: 255/255, green: 230/255, blue: 180/255, alpha: 1.0)
         
         [minusButton, plusButton].forEach {
             $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
             $0.backgroundColor = buttonColor
             $0.setTitleColor(.black, for: .normal)
             $0.layer.cornerRadius = 15
+            $0.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 120/255, alpha: 1.0).cgColor
+            $0.layer.borderWidth = 3
             $0.clipsToBounds = true
             $0.widthAnchor.constraint(equalToConstant: 30).isActive = true
             $0.heightAnchor.constraint(equalToConstant: 30).isActive = true
