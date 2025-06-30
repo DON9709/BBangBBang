@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         setupTabMenu()
         setupScrollableContent()
         setupPaymentSection()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handlePaymentAttempt), name: NSNotification.Name("TryPayment"), object: nil)
     }
     
     private func setupHeader() {
@@ -97,4 +99,19 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - Payment Success Alert
+    func showPaymentSuccessAlert() {
+        let alert = UIAlertController(title: nil, message: "결제 완료", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    @objc private func handlePaymentAttempt() {
+        if cartView.cartItems.isEmpty {
+            let alert = UIAlertController(title: nil, message: "결제할 상품이 없습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            showPaymentSuccessAlert()
+        }
+    }
 }
