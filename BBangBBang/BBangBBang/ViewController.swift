@@ -13,15 +13,19 @@ class ViewController: UIViewController {
     private let tabMenuView = TabMenuView()
     private let menuView = MenuView()
     private let cartView = CartViewController()
+    private let paymentSectionView = PaymentSectionView()
     
+    private let scrollView = UIScrollView()
+    private let contentStackView = UIStackView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         setupHeader()
         setupTabMenu()
-        setupMenuSection()
-        setupCart()
+        setupScrollableContent()
+        setupPaymentSection()
     }
     
     private func setupHeader() {
@@ -49,25 +53,30 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setupMenuSection() {
-        
-        view.addSubview(menuView)
-        
-        menuView.snp.makeConstraints {
+    private func setupScrollableContent() {
+        scrollView.showsVerticalScrollIndicator = false
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints {
             $0.top.equalTo(tabMenuView.snp.bottom).offset(16)
-            $0.directionalHorizontalEdges.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+
+        scrollView.addSubview(contentStackView)
+        contentStackView.axis = .vertical
+        contentStackView.spacing = 64
+        contentStackView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+
+        contentStackView.addArrangedSubview(menuView)
+        menuView.snp.makeConstraints {
             $0.height.equalTo(400)
         }
-        
-    }
-    
-    private func setupCart() {
-        
-        view.addSubview(cartView.view)
-        
+
+        contentStackView.addArrangedSubview(cartView.view)
         cartView.view.snp.makeConstraints {
-            $0.top.equalTo(menuView.snp.bottom).offset(64)
-            $0.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.5)
         }
     }
@@ -76,5 +85,13 @@ class ViewController: UIViewController {
         menuView.updateCategory(index: sender.tag)
     }
     
-}
+    private func setupPaymentSection() {
+        view.addSubview(paymentSectionView)
 
+        paymentSectionView.snp.makeConstraints {
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(80)
+        }
+    }
+    
+}
