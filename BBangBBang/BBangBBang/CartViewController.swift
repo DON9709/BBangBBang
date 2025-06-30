@@ -92,6 +92,7 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
         updateTotalPrice()
         
         NotificationCenter.default.addObserver(self, selector: #selector(didReceiveSelectedItem(_:)), name: NSNotification.Name("SelectedBreadItem"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(cancelAllItems), name: NSNotification.Name("CancelAllItems"), object: nil)
     }
     
     func updateTotalPrice() {
@@ -165,6 +166,13 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
             tableView.reloadData()
             updateTotalPrice()
         }
+    
+    @objc func cancelAllItems() {
+        cartItems.removeAll()
+        tableView.reloadData()
+        updateTotalPrice()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

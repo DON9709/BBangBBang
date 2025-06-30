@@ -60,11 +60,13 @@ class PaymentSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
+        cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
     }
 
     private func setupViews() {
@@ -97,6 +99,10 @@ class PaymentSectionView: UIView {
             make.bottom.equalToSuperview().inset(24)
             make.height.equalTo(44)
         }
+    }
+    
+    @objc private func cancelTapped() {
+        NotificationCenter.default.post(name: NSNotification.Name("CancelAllItems"), object: nil)
     }
 }
 
