@@ -18,7 +18,7 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
     let cartTitleLabel = UILabel()
     let tableView = UITableView()
     let totalLabel = UILabel()
-    let checkoutButton = UIButton(type: .system)
+//    let checkoutButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,12 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
         tableView.register(CartSection.self, forCellReuseIdentifier: CartSection.identifier)
         tableView.tableFooterView = UIView()
         
-        checkoutButton.setTitle("결제하기", for: .normal)
-        checkoutButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        checkoutButton.backgroundColor = UIColor.systemBlue
-        checkoutButton.setTitleColor(.white, for: .normal)
-        checkoutButton.layer.cornerRadius = 10
-        checkoutButton.addTarget(self, action: #selector(didReceiveSelectedItem), for: .touchUpInside)
+//        checkoutButton.setTitle("결제하기", for: .normal)
+//        checkoutButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+//        checkoutButton.backgroundColor = UIColor.systemBlue
+//        checkoutButton.setTitleColor(.white, for: .normal)
+//        checkoutButton.layer.cornerRadius = 10
+//        checkoutButton.addTarget(self, action: #selector(didReceiveSelectedItem), for: .touchUpInside)
         
         cartContainerView.backgroundColor = UIColor.white
         cartContainerView.layer.cornerRadius = 22
@@ -46,7 +46,7 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
         cartContainerView.layer.borderColor = UIColor.systemGray4.cgColor
 
         view.addSubview(cartContainerView)
-        view.addSubview(checkoutButton)
+//        view.addSubview(checkoutButton)
         cartContainerView.addSubview(cartTitleLabel)
         cartContainerView.addSubview(tableView)
         cartContainerView.addSubview(totalLabel)
@@ -59,18 +59,18 @@ CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
         cartContainerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
-            make.bottom.equalTo(checkoutButton.snp.top).offset(-10)
+            make.bottom.equalToSuperview().offset(-64)
         }
 
-        checkoutButton.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
-            make.height.equalTo(50)
-        }
+//        checkoutButton.snp.makeConstraints { make in
+//            make.leading.trailing.equalToSuperview().inset(16)
+//            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(10)
+//            make.height.equalTo(50)
+//        }
 
         cartTitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.leading.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(24)
+            make.leading.equalToSuperview().offset(24)
         }
 
         tableView.snp.makeConstraints { make in

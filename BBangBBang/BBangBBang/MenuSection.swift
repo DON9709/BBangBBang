@@ -32,7 +32,6 @@ class ProductView: UIView {
     }
     
     func setupUI() {
-        imageView.backgroundColor = .lightGray
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         
@@ -49,13 +48,13 @@ class ProductView: UIView {
         stack.spacing = 6
         
         addSubview(stack)
-        stack.snp.makeConstraints { $0.edges.equalToSuperview().inset(10) }
+        stack.snp.makeConstraints { $0.edges.equalToSuperview().inset(16) }
         imageView.snp.makeConstraints { $0.height.equalToSuperview().multipliedBy(0.65) }
         
-        backgroundColor = .white
-        layer.borderColor = UIColor.brown.cgColor
-        layer.borderWidth = 1
-        layer.cornerRadius = 12
+        backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 180/255, alpha: 1.0) // 바깥 테두리 색상
+        layer.cornerRadius = 22
+        layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 120/255, alpha: 1.0).cgColor
+        layer.borderWidth = 10
     }
 
     func configure(image: UIImage?, title: String, price: String) {
@@ -101,7 +100,7 @@ class MenuCell: UICollectionViewCell {
         }
         
         contentView.addSubview(gridStack)
-        gridStack.snp.makeConstraints { $0.edges.equalToSuperview().inset(8) }
+        gridStack.snp.makeConstraints { $0.edges.equalToSuperview().inset(16) }
     }
 
     func configure(with items: [MenuItem]) {

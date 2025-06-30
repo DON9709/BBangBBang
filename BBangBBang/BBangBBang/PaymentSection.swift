@@ -12,28 +12,28 @@ import SnapKit
 
 class PaymentSectionView: UIView {
 
-    private let totalLabel: UILabel = {
-        let label = UILabel()
-        label.text = "결제 금액"
-        label.font = .systemFont(ofSize: 16)
-        label.textColor = .black
-        return label
-    }()
+//    private let totalLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "결제 금액"
+//        label.font = .systemFont(ofSize: 16)
+//        label.textColor = .black
+//        return label
+//    }()
 
-    private let priceLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10,000원"
-        label.font = .boldSystemFont(ofSize: 18)
-        label.textColor = .black
-        return label
-    }()
+//    private let priceLabel: UILabel = {
+//        let label = UILabel()
+//        label.text = "10,000원"
+//        label.font = .boldSystemFont(ofSize: 18)
+//        label.textColor = .black
+//        return label
+//    }()
 
     private let cancelButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("전체 취소", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.borderColor = UIColor.systemGray4.cgColor
         button.layer.cornerRadius = 22
         return button
     }()
@@ -42,9 +42,10 @@ class PaymentSectionView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("결제 하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.black.cgColor
-        button.backgroundColor = UIColor(hex: "#FEDFA9")
+        button.layer.borderWidth = 4
+        button.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 120/255, alpha: 1.0).cgColor
+        button.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 180/255, alpha: 1.0)
+
         button.layer.cornerRadius = 22
         return button
     }()
@@ -73,7 +74,7 @@ class PaymentSectionView: UIView {
         backgroundColor = .white
 
         let topBorder = UIView()
-        topBorder.backgroundColor = .lightGray
+        topBorder.backgroundColor = UIColor.systemGray6
         addSubview(topBorder)
         topBorder.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -81,20 +82,19 @@ class PaymentSectionView: UIView {
             make.height.equalTo(1)
         }
 
-        let hStack = UIStackView(arrangedSubviews: [totalLabel, priceLabel])
-        hStack.axis = .horizontal
-        hStack.distribution = .equalSpacing
-
-        addSubview(hStack)
+//        let hStack = UIStackView(arrangedSubviews: [totalLabel, priceLabel])
+//        hStack.axis = .horizontal
+//        hStack.distribution = .equalSpacing
+//
+//        addSubview(hStack)
         addSubview(buttonStack)
-
-        hStack.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(24)
-        }
+//
+//        hStack.snp.makeConstraints { make in
+//            make.top.equalToSuperview()
+//            make.leading.trailing.equalToSuperview().inset(24)
+//        }
 
         buttonStack.snp.makeConstraints { make in
-            make.top.equalTo(hStack.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview().inset(24)
             make.bottom.equalToSuperview().inset(24)
             make.height.equalTo(44)

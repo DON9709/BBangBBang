@@ -21,7 +21,7 @@ final class TitleSectionView: UIView {
     
     private let headerBottomBorderView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 242/255, green: 229/255, blue: 234/255, alpha: 1)
+        view.backgroundColor = UIColor.systemGray4
         return view
     }()
     
@@ -138,11 +138,11 @@ final class TabMenuView: UIView {
     private func selectCategory(index: Int) {
         for (i, button) in buttons.enumerated() {
             if i == index {
-                button.backgroundColor = UIColor(red: 254/255, green: 223/255, blue: 169/255, alpha: 1)
+                button.backgroundColor = UIColor(red: 255/255, green: 230/255, blue: 180/255, alpha: 1.0)
                 button.setTitleColor(.black, for: .normal)
-                button.layer.borderWidth = 1
-                button.layer.borderColor = UIColor.black.cgColor
                 button.layer.cornerRadius = 22
+                button.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 120/255, alpha: 1.0).cgColor
+                button.layer.borderWidth = 4
             } else {
                 button.backgroundColor = .clear
                 button.layer.borderWidth = 0
