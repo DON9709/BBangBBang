@@ -40,7 +40,7 @@ class PaymentSectionView: UIView {
 
     private let payButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("결제 하기", for: .normal)
+        button.setTitle("결제하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.layer.borderWidth = 4
         button.layer.borderColor = UIColor(red: 255/255, green: 200/255, blue: 120/255, alpha: 1.0).cgColor
@@ -62,12 +62,14 @@ class PaymentSectionView: UIView {
         super.init(frame: frame)
         setupViews()
         cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupViews()
         cancelButton.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
+        payButton.addTarget(self, action: #selector(payTapped), for: .touchUpInside)
     }
 
     private func setupViews() {
@@ -104,6 +106,10 @@ class PaymentSectionView: UIView {
     @objc private func cancelTapped() {
         NotificationCenter.default.post(name: NSNotification.Name("CancelAllItems"), object: nil)
     }
+    
+    @objc private func payTapped() {
+        NotificationCenter.default.post(name: NSNotification.Name("TryPayment"), object: nil)
+    }
 }
 
 extension UIColor {
@@ -119,5 +125,18 @@ extension UIColor {
         let b = CGFloat(rgb & 0x0000FF) / 255
 
         self.init(red: r, green: g, blue: b, alpha: 1.0)
+    }
+}
+
+extension UIView {
+    func findViewController() -> UIViewController? {
+        var responder: UIResponder? = self
+        while let r = responder {
+            if let vc = r as? UIViewController {
+                return vc
+            }
+            responder = r.next
+        }
+        return nil
     }
 }
