@@ -44,6 +44,7 @@
 
 ## 프로젝트 구조
 
+```
 BBangBBang/
 ├── AppDelegate.swift
 ├── CartItem.swift
@@ -54,6 +55,7 @@ BBangBBang/
 ├── SceneDelegate.swift
 ├── TitleSection.swift
 └── ViewController.swift
+```
 
 ---
 
